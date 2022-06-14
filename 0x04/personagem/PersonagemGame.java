@@ -1,18 +1,19 @@
 public class PersonagemGame {
 
-    int saudeAtual;
-    String nome;
+    public int saudeAtual;
+    public String nome;
+
+
+    public PersonagemGame(int saudeAtual, String nome) {
+        this.saudeAtual = saudeAtual;
+        this.nome = nome;
+    }
 
     public PersonagemGame(int saudeAtual) {
         this.saudeAtual = saudeAtual;
     }
 
     public PersonagemGame(String nome) {
-        this.nome = nome;
-    }
-
-    public PersonagemGame(int saudeAtual, String nome) {
-        this.saudeAtual = saudeAtual;
         this.nome = nome;
     }
 
