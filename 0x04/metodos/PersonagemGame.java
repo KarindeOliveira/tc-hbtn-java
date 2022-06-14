@@ -4,7 +4,7 @@ public class PersonagemGame {
 
     int quantidadeDeCura;
 
-    int saudeAtual;
+    private int saudeAtual;
     private String nome;
 
     public PersonagemGame(int saudeAtual, String nome) {
@@ -56,15 +56,23 @@ public class PersonagemGame {
         this.quantidadeDeCura = quantidadeDeCura;
     }
 
-    public int tomarDano(int quantidadeDeDano) {
-        int tomaDano = saudeAtual - quantidadeDeDano;
-        return tomaDano;
+    public void tomarDano(int quantidadeDeDano) {
+        int dano = getSaudeAtual() - quantidadeDeDano;
+        if( dano < 0){
+            this.saudeAtual = 0;
+        }else{
+            this.saudeAtual = dano;
+        }
 
     }
 
-    public int receberCura(int quantidadeDeCura) {
-        int recebeCura = saudeAtual + quantidadeDeCura;
-        return recebeCura;
+    public void receberCura(int quantidadeDeCura){
+        int cura = getSaudeAtual() + quantidadeDeCura;
+        if(cura > 100){
+            this.saudeAtual = 100;
+        }else{
+            this.saudeAtual = cura;
+        }
     }
 
 }
