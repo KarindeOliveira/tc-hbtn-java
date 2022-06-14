@@ -1,47 +1,32 @@
 public class PersonagemGame {
 
-    int quantidadeDeDano;
-
-    int quantidadeDeCura;
-
-    private String status;
-
     private int saudeAtual;
     private String nome;
 
-    public PersonagemGame() {
-    }
+    private String status;
 
-    public PersonagemGame(int quantidadeDeDano, int quantidadeDeCura) {
-        this.quantidadeDeDano = quantidadeDeDano;
-        this.quantidadeDeCura = quantidadeDeCura;
-    }
-
-    public PersonagemGame(String nome) {
+    public PersonagemGame(int saudeAtual, String nome) {
+        this.saudeAtual = saudeAtual;
         this.nome = nome;
+        setSaudeAtual(saudeAtual);
     }
 
-    public PersonagemGame(int quantidadeDeDano, String sonic) {
-    }
+    public void tomarDano(int quantidadeDeDano){
+        int saude = getSaudeAtual() - quantidadeDeDano;
+        if(saude <= 0){
+            this.saudeAtual = 0;
+        }else{
+            this.saudeAtual = saude;
+        }
 
-    public int getQuantidadeDeDano() {
-        return quantidadeDeDano;
     }
-
-    public void setQuantidadeDeDano(int quantidadeDeDano) {
-        this.quantidadeDeDano = quantidadeDeDano;
-    }
-
-    public int getQuantidadeDeCura() {
-        return quantidadeDeCura;
-    }
-
-    public void setQuantidadeDeCura(int quantidadeDeCura) {
-        this.quantidadeDeCura = quantidadeDeCura;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+    public void receberCura(int quantidadeDeCura){
+        int cura = getSaudeAtual() + quantidadeDeCura;
+        if(cura > 100){
+            this.saudeAtual = 100;
+        }else{
+            this.saudeAtual = cura;
+        }
     }
 
     public int getSaudeAtual() {
@@ -52,8 +37,15 @@ public class PersonagemGame {
         this.saudeAtual = saudeAtual;
     }
 
+
     public String getNome() {
         return nome;
+    }
+
+    public void setNome(String nome) {
+        if(nome != null && !nome.isEmpty()){
+            this.nome = nome;
+        }
     }
 
     public String getStatus() {
@@ -65,28 +57,4 @@ public class PersonagemGame {
         return status;
     }
 
-    public void setNome(String nome) {
-        if(nome == null || nome.isEmpty() || nome.isBlank()){
-            this.nome = "Sonic";}
-    }
-
-    public void tomarDano(int quantidadeDeDano) {
-        int saude = getSaudeAtual() - quantidadeDeDano;
-        if( saude <= 0){
-            this.saudeAtual = 0;
-        }else{
-            this.saudeAtual = saude;
-        }
-
-    }
-
-      public void receberCura(int quantidadeDeCura){
-        int saude = getSaudeAtual() + quantidadeDeCura;
-        if(saude >= 100){
-            this.saudeAtual = 100;
-        }else{
-            this.saudeAtual = saude;
-        }
-
-    }
 }
