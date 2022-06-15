@@ -4,12 +4,6 @@ public class Empregado {
     private int codigo;
     private Endereco endereco;
 
-    public Empregado(String nome, int codigo, Endereco endereco) {
-        this.nome = nome;
-        this.codigo = codigo;
-        this.endereco = endereco;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -34,12 +28,17 @@ public class Empregado {
         this.endereco = endereco;
     }
 
-    public void apresentar(){
-        System.out.println("Codigo: "+ this.codigo);
-        System.out.println("Nome: "+ this.nome);
-        System.out.println("Bairro: " + this.endereco.getBairro());
-        System.out.println("Cidade: " + this.endereco.getCidade());
-        System.out.println("Pais: " + this.endereco.getPais());
+    public Empregado(String nome, int codigo, Endereco endereco){
+        this.codigo = codigo;
+        this.nome = nome;
+        this.endereco = endereco;
     }
 
+    public void apresentar(){
+        System.out.println("Codigo: "+this.codigo);
+        System.out.println("Nome: "+this.nome);
+        System.out.println("Bairro: "+this.endereco.getBairro());
+        System.out.println("Cidade: "+this.endereco.getCidade());
+        System.out.print("Pais: "+this.endereco.getPais());
+    }
 }
