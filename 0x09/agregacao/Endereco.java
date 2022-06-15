@@ -74,9 +74,4 @@ public class Endereco {
         this.pais = pais;
     }
 
-    public String imprimir(){
-        return "\nBairro: " + getBairro() + "\nCidade: " + getCidade() + "\nPais: " + getPais();
-    }
-
-
 }

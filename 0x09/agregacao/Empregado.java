@@ -10,10 +10,6 @@ public class Empregado {
         this.endereco = endereco;
     }
 
-    public Empregado() {
-        this.endereco = endereco;
-    }
-
     public String getNome() {
         return nome;
     }
