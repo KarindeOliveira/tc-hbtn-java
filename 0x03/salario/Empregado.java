@@ -2,6 +2,7 @@ public class Empregado extends Departamento{
 
     private double salarioFixo;
 
+
     public double getSalarioFixo() {
         return salarioFixo;
     }
