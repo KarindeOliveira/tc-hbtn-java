@@ -64,7 +64,6 @@ public class ContaBancariaBasica {
         return getSaldo() * ((getTaxaJurosAnual() / 12) / 100);
     }
 
-
     public void aplicarAtualizacaoMensal(){
         this.saldo = this.saldo + calcularJurosMensal() - calcularTarifaMensal();
 
