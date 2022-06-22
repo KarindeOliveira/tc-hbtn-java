@@ -22,16 +22,13 @@ public class Livro {
     public Livro() {
     }
 
-    public Livro(double preco) {
-    }
-
     public String getTitulo() {
         return titulo;
     }
 
-    public void setTitulo(String titulo) throws AutorInvalidoException {
+    public void setTitulo(String titulo) throws LivroInvalidoException {
         if (titulo.length() < 3) {
-            throw new AutorInvalidoException("Titulo de livro invalido");
+            throw new LivroInvalidoException("Titulo de livro invalido");
 
         } else {
             this.titulo = titulo;
