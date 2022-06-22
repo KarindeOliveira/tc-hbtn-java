@@ -22,23 +22,6 @@ public class Livro {
     public Livro() {
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) throws LivroInvalidoException {
-        if (titulo.length() < 3) {
-            throw new LivroInvalidoException("Titulo de livro invalido");
-
-        } else {
-            this.titulo = titulo;
-        }
-    }
-
-    public String getAutor() {
-        return autor;
-    }
-
     public void setAutor(String autor) throws AutorInvalidoException {
         if(autor != null && !autor.isEmpty() && new StringTokenizer(autor).countTokens() > 1){
             this.autor = autor;
@@ -48,16 +31,29 @@ public class Livro {
         }
     }
 
-
-    public double getPreco() throws LivroInvalidoException {
-        return preco;
+    public String getAutor() {
+        return autor;
     }
 
     public void setPreco(double preco) throws LivroInvalidoException {
-        if (preco > 0) {
+        if(preco > 0){
             this.preco = preco;
-        } else {
+        }else{
             throw new LivroInvalidoException("Preco de livro invalido");
         }
+    }
+    public double getPreco() {
+        return preco;
+    }
+    public void setTitulo(String titulo) throws LivroInvalidoException {
+        if(titulo.length()  < 3){
+            throw new LivroInvalidoException("Titulo de livro invalido");
+        }
+        else{
+            this.titulo = titulo;
+        }
+    }
+    public String getTitulo() {
+        return titulo;
     }
 }

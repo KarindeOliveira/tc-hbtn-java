@@ -12,7 +12,7 @@ public class LivroEdicaoOuro extends Livro{
 
 
     @Override
-    public double getPreco() throws  LivroInvalidoException{
+    public double getPreco() {
         double porcentagem = super.getPreco() * 0.3;
         porcentagem = porcentagem +super.getPreco();
         return porcentagem;
