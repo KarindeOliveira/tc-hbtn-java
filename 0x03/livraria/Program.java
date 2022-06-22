@@ -44,33 +44,3 @@ public class Program {
         }
     }
 }
-
-        try {
-            Livro livro2 = new Livro(
-                    "ab",
-                    "Jane Doe",
-                    15.99);
-
-            System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
-                    livro2.getTitulo(),
-                    livro2.getAutor(),
-                    livro2.getPreco());
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage() + "\n");
-        }
-
-        try {
-            Livro livro3 = new Livro(
-                    "Harry Potter e o enigma do principe",
-                    "J.K. Rowling",
-                    0);
-
-            System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
-                    livro3.getTitulo(),
-                    livro3.getAutor(),
-                    livro3.getPreco());
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage() + "\n");
-        }
-    }
-}
