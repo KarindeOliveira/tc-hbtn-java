@@ -31,7 +31,7 @@ public class Livro {
 
     public void setTitulo(String titulo) throws AutorInvalidoException {
         if (titulo.length() < 3) {
-            throw new AutorInvalidoException("Nome de autor invalido");
+            throw new AutorInvalidoException("Titulo de livro invalido");
 
         } else {
             this.titulo = titulo;
