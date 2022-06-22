@@ -10,7 +10,6 @@ public class LivroEdicaoOuro extends Livro{
         super.setTitulo(titulo);
     }
 
-
     @Override
     public double getPreco() {
         double porcentagem = super.getPreco() * 0.3;
@@ -18,5 +17,4 @@ public class LivroEdicaoOuro extends Livro{
         return porcentagem;
     }
 }
-
 
