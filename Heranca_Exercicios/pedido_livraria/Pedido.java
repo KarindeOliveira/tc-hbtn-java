@@ -18,6 +18,8 @@ public class Pedido {
         return (total - total * this.percentualDesconto/100);
     }
 
+    public String apresentarResumoPedido(){}
+
     public double getPercentualDesconto() {
         return percentualDesconto;
     }
