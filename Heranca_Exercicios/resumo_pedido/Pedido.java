@@ -25,7 +25,7 @@ public class Pedido {
         for (ItemPedido item : itens) {
            String corteTipo = String.valueOf(item.getProduto().getClass().getName());
             String tipo = corteTipo.substring(9);
-            
+
         System.out.printf("Tipo: "+ tipo +" Titulo: "+item.getProduto().getTitulo()+
                 " Preco: %.2f Quant: %d Total: %.2f\n", item.getProduto().obterPrecoLiquido(),item.getQuantidade(),item.getQuantidade()*item.getProduto().obterPrecoLiquido());
 
@@ -33,12 +33,11 @@ public class Pedido {
             totalProduto = totalProduto + item.getProduto().obterPrecoLiquido()*item.getQuantidade();
         }
 
-        double totalPedido = totalProduto - totalProduto * this.percentualDesconto/100;
         System.out.println("--------------");
-        System.out.printf("DESCONTO: %.2f\n", percentualDesconto);
+        System.out.printf("DESCONTO: %.2f\n", total*this.percentualDesconto/100);
         System.out.printf("TOTAL PRODUTOS: %.2f\n", totalProduto);
         System.out.println("--------------");
-        System.out.printf("TOTAL PEDIDO: %.2f\n", totalPedido);
+        System.out.printf("TOTAL PEDIDO: %.2f\n", totalProduto - totalProduto * this.percentualDesconto/100);
         System.out.println("--------------");
     }
 
