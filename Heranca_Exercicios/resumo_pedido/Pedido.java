@@ -33,12 +33,12 @@ public class Pedido {
             totalProduto = totalProduto + item.getProduto().obterPrecoLiquido()*item.getQuantidade();
         }
 
-        System.out.println("--------------");
+        System.out.println(" ----------------------------");
         System.out.printf("DESCONTO: %.2f\n", total*this.percentualDesconto/100);
         System.out.printf("TOTAL PRODUTOS: %.2f\n", totalProduto);
-        System.out.println("--------------");
+        System.out.println(" ----------------------------");
         System.out.printf("TOTAL PEDIDO: %.2f\n", totalProduto - totalProduto * this.percentualDesconto/100);
-        System.out.println("--------------");
+        System.out.println(" ----------------------------");
     }
 
 
