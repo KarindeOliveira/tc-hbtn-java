@@ -2,7 +2,7 @@ public class Program {
     public static void main(String[] args) {
         ListaTodo todo = new ListaTodo();
 
-        
+        todo.adicionarTarefa(new Tarefa("Ler conteudo aula Lambda", 1));
         todo.adicionarTarefa(new Tarefa("Aprender Design Patterns", 2));
         todo.adicionarTarefa(new Tarefa("Limpar o quarto", 3));
 
