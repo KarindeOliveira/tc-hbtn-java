@@ -1,3 +1,5 @@
+
+
 public class Tarefa {
 
     private String descricao;
@@ -27,9 +29,6 @@ public class Tarefa {
         return identificador;
     }
 
-    public void setIdentificador(int identificador) {
-        this.identificador = identificador;
-    }
 
     public Tarefa(String descricao, int identificador){
 
