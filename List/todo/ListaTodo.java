@@ -4,11 +4,6 @@ import java.util.List;
 public class ListaTodo {
 
     private ArrayList<Tarefa> tarefas;
-
-    public ListaTodo(ArrayList<Tarefa> tarefas) {
-        this.tarefas = tarefas;
-    }
-
     public ListaTodo(){
         tarefas = new ArrayList<Tarefa>();
     }
@@ -55,18 +50,10 @@ public class ListaTodo {
     public void listarTarefas(){
         for(int i = 0; i< tarefas.size(); i++){
             if(tarefas.get(i).isEstahFeita() == true){
-                System.out.println("[X] Id: "+tarefas.get(i).getIdentificador()+" - Descricao: "+tarefas.get(i).getDescricao());
+                System.out.println("[X]  Id: "+tarefas.get(i).getIdentificador()+" - Descricao: "+tarefas.get(i).getDescricao());
             }else{
-                System.out.println("[ ] Id: "+tarefas.get(i).getIdentificador()+" - Descricao: "+tarefas.get(i).getDescricao());
+                System.out.println("[ ]  Id: "+tarefas.get(i).getIdentificador()+" - Descricao: "+tarefas.get(i).getDescricao());
             }
         }
     }
 }
-
-
-
-
-
-
-
-
