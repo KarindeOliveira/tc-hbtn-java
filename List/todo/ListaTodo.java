@@ -4,6 +4,11 @@ import java.util.List;
 public class ListaTodo {
 
     private ArrayList<Tarefa> tarefas;
+
+    public ListaTodo(ArrayList<Tarefa> tarefas) {
+        this.tarefas = tarefas;
+    }
+
     public ListaTodo(){
         tarefas = new ArrayList<Tarefa>();
     }
