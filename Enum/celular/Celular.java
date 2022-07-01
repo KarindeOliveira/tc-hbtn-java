@@ -3,12 +3,12 @@ import java.util.*;
 public class Celular {
 
 
-    private ArrayList<Contato> cel = new ArrayList<Contato>();
+    private ArrayList<Contato> contatos = new ArrayList<Contato>();
 
 
     public int obterPosicaoContato(String nome) {
-        for (int i = 0; i < this.cel.size(); i++) {
-            if (cel.get(i).getNome().equals(nome)) {
+        for (int i = 0; i < this.contatos.size(); i++) {
+            if (contatos.get(i).getNome().equals(nome)) {
                 return i;
             }
         }
@@ -18,7 +18,7 @@ public class Celular {
 
     public void adicionarContato(Contato nome){
         if(obterPosicaoContato(nome.getNome()) == -1){
-            cel.add(nome);
+            contatos.add(nome);
         }else{
            throw new IllegalArgumentException("Nao foi possivel adicionar contato. Contato jah existente com esse nome");
         }
@@ -32,7 +32,7 @@ public class Celular {
         if((obterPosicaoContato(novoContato.getNome()) != -1) && (obterPosicaoContato(novoContato.getNome())!=obterPosicaoContato(contatoAntigo.getNome()))){
             throw new IllegalArgumentException("Nao foi possivel modificar contato. Contato jah existente com esse nome");
         }
-        cel.set(obterPosicaoContato(contatoAntigo.getNome()),novoContato);
+        contatos.set(obterPosicaoContato(contatoAntigo.getNome()),novoContato);
     }
 
 
@@ -42,14 +42,14 @@ public class Celular {
         if(obterPosicaoContato(nome.getNome()) == -1){
             throw new IllegalArgumentException("Nao foi possivel remover contato. Contato nao existe");
         }else{
-            cel.remove(obterPosicaoContato(nome.getNome()));
+            contatos.remove(obterPosicaoContato(nome.getNome()));
         }
     }
 
 
     public void listarContatos(){
-        for(int i = 0; i < cel.size(); i++){
-            System.out.println(cel.get(i).getNome()+" -> "+cel.get(i).getNumTel()+" "+"("+cel.get(i).getTipoNumero()+")");
+        for(int i = 0; i < contatos.size(); i++){
+            System.out.println(contatos.get(i).getNome()+" -> "+contatos.get(i).getNumTel()+" "+"("+contatos.get(i).getTipoNumero()+")");
         }
     }
 }
