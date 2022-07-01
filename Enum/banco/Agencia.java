@@ -5,17 +5,8 @@ public class Agencia {
     private String nome;
     private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 
-    public Agencia(String nome, ArrayList<Cliente> clientes) {
-        this.nome = nome;
-        this.clientes = clientes;
-    }
-
-    public Agencia(String nome) {
-        this.nome = nome;
-    }
-
-    public Agencia(ArrayList<Cliente> clientes) {
-        this.clientes = clientes;
+    public Agencia(String nomeAgencia) {
+        this.nome = nomeAgencia;
     }
 
     public String getNome() {
@@ -26,9 +17,9 @@ public class Agencia {
         return clientes;
     }
 
-    public boolean novoCliente(String nome, double valorIni){
-        if(buscarCliente(nome) == null){
-            this.clientes.add(new Cliente(nome, valorIni));
+    public boolean novoCliente(String nomeCliente, double valorIni){
+        if(buscarCliente(nomeCliente) == null){
+            this.clientes.add(new Cliente(nomeCliente, valorIni));
             return true;
         }else{
             return false;
@@ -37,8 +28,8 @@ public class Agencia {
 
     public boolean adicionarTransacaoCliente(String nomeCLiente, double valorIni){
 
-        if(buscarCliente(nome) != null){
-            buscarCliente(nome).adicionarTransacao(valorIni);
+        if(buscarCliente(nomeCLiente) != null){
+            buscarCliente(nomeCLiente).adicionarTransacao(valorIni);
             return true;
         }else{
             return false;
@@ -47,11 +38,11 @@ public class Agencia {
 
 
 
-    public Cliente buscarCliente(String nome){
+    public Cliente buscarCliente(String nomeCLiente){
 
         for (Cliente lista : this.clientes) {
 
-            if(lista.getNome().equals(nome)){
+            if(lista.getNome().equals(nomeCLiente)){
                 return lista;
 
             }

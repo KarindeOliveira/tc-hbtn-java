@@ -9,11 +9,11 @@ public class Banco {
         this.nome = nomeBanco;
         agencias = new ArrayList<Agencia>();
     }
-    public Agencia buscarAgencia(String nome){
+    public Agencia buscarAgencia(String nomeAgencia){
 
         for (Agencia lista : this.agencias) {
 
-            if(lista.getNome().equals(nome)){
+            if(lista.getNome().equals(nomeAgencia)){
                 return lista;
 
             }
@@ -25,21 +25,21 @@ public class Banco {
 
 
 
-    public boolean adicionarAgencia(String nome){
-        if(buscarAgencia(nome) != null){
+    public boolean adicionarAgencia(String nomeAgencia){
+        if(buscarAgencia(nomeAgencia) != null){
             return false;
         }else{
-            this.agencias.add(new Agencia(nome));
+            this.agencias.add(new Agencia(nomeAgencia));
             return true;
         }
     }
 
 
-    public boolean adicionarCliente(String nome, String cliente, double valorIni){
-        Agencia agencia =  buscarAgencia(nome);
-        if(agencia.buscarCliente(cliente) == null){
-            agencia.novoCliente(cliente,valorIni);
-            adicionarAgencia(nome);
+    public boolean adicionarCliente(String nomeAgencia, String nomeCliente, double valorIni){
+        Agencia agencia =  buscarAgencia(nomeAgencia);
+        if(agencia.buscarCliente(nomeCliente) == null){
+            agencia.novoCliente(nomeCliente,valorIni);
+            adicionarAgencia(nomeAgencia);
             return true;
         }else{
             return false;
@@ -48,18 +48,15 @@ public class Banco {
 
 
 
-    public boolean adicionarTransacaoCliente(String nomeAgencia, String nomeCLiente, double valorIni){
+    public boolean adicionarTransacaoCliente(String nomeAgencia, String nomeCliente, double valorIni){
 
         Agencia agencia = buscarAgencia(nomeAgencia);
-        if((agencia.buscarCliente(nome) != null) && (buscarAgencia(nomeAgencia) != null)){
-            return agencia.adicionarTransacaoCliente(nomeCLiente, valorIni);
+        if((agencia.buscarCliente(nomeCliente) != null) && (buscarAgencia(nomeAgencia) != null)){
+            return agencia.adicionarTransacaoCliente(nomeCliente, valorIni);
             }else{
             return false;
         }
     }
-
-
-
 
 
     public boolean listarClientes(String nomeAgencia, boolean imprime){
