@@ -7,7 +7,7 @@ public class CarregarVideo implements Atividade{
 
     @Override
     public void executar() {
-        System.out.println("codificando video");
+        System.out.println("carregando video");
 
     }
 }
