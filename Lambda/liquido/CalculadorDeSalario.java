@@ -1,3 +1,4 @@
+@FunctionalInterface
 public interface CalculadorDeSalario {
 
 
