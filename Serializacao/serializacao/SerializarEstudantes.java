@@ -28,7 +28,7 @@ public class SerializarEstudantes<Estudantes> {
 
     }
 
-    @SuppressWarnings({"all"})
+    @SuppressWarnings({"unchecked"})
     public List<Estudante> desserializar() {
 
         List<Estudante> estudante = new ArrayList<>();
