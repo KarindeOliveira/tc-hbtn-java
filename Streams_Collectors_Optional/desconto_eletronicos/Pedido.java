@@ -6,6 +6,7 @@ public class Pedido {
     private int codigo;
     List<Produto> produtos = new ArrayList<>();
     private Cliente cliente;
+    private String vitinho;
 
 
     public Pedido(int codigo, List<Produto> produtos, Cliente cliente) {
