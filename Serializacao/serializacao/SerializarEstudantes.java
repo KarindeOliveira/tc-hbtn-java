@@ -10,38 +10,39 @@ public class SerializarEstudantes<Estudantes> {
         this.nomeArquivo = nomeArquivo;
     }
 
-    public void serializar (List<Estudante> estudantes) {
-               List<Estudante> lista = new ArrayList<>();
-               FileOutputStream arquivo = null;
-               try {
-                   arquivo = new FileOutputStream("c:\\"+this.nomeArquivo+".ser");
-               } catch (FileNotFoundException e) {
-                   throw new RuntimeException("Nao foi possivel serializar");
-               }
-               ObjectOutputStream oos = null;
-               try {
-                   oos = new ObjectOutputStream(arquivo);
-               } catch (IOException e) {
-                   throw new RuntimeException("Nao foi possivel serializar");
-               }
-               try {
-                   oos.writeObject(estudantes);
-               } catch (IOException e) {
-                   throw new RuntimeException("Nao foi possivel serializar");
-               }
-               try {
-                   oos.close();
-               } catch (IOException e) {
-                   throw new RuntimeException("Nao foi possivel serializar");
-               }
+    public void serializar(List<Estudante> estudantes) {
+        List<Estudante> lista = new ArrayList<>();
+        FileOutputStream arquivo = null;
+        try {
+            arquivo = new FileOutputStream("c:\\" + this.nomeArquivo + ".ser");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException("Nao foi possivel serializar");
+        }
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(arquivo);
+        } catch (IOException e) {
+            throw new RuntimeException("Nao foi possivel serializar");
+        }
+        try {
+            oos.writeObject(estudantes);
+        } catch (IOException e) {
+            throw new RuntimeException("Nao foi possivel serializar");
+        }
+        try {
+            oos.close();
+        } catch (IOException e) {
+            throw new RuntimeException("Nao foi possivel serializar");
+        }
 
-           }
+    }
 
-   public List<Estudante> desserializar ()  {
+    @SuppressWarnings("unchecked")
+    public List<Estudante> desserializar() {
         List<Estudante> estudante = new ArrayList<>();
         FileInputStream fis = null;
         try {
-            fis = new FileInputStream("c:\\"+this.nomeArquivo+".ser");
+            fis = new FileInputStream("c:\\" + this.nomeArquivo + ".ser");
         } catch (FileNotFoundException e) {
             throw new RuntimeException("Nao foi possivel desserializar");
         }
@@ -63,8 +64,8 @@ public class SerializarEstudantes<Estudantes> {
         } catch (IOException e) {
             throw new RuntimeException("Nao foi possivel desserializar");
         }
-    return estudante;}
-
+        return estudante;
+    }
 
 
 }
