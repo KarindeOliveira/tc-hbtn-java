@@ -39,10 +39,10 @@ public class Estudante implements Serializable {
 
         @Override
         public String toString() {
-                return "Estudante{" +
-                        "nome= " + this.nome +
-                        ", idade= " + this.idade +
-                        ", senha= " + this.senha +
+                return "Estudante { " +
+                        "nome= " + "'" + this.nome + "'" +
+                        ", idade= " + "'" + this.idade + "'" +
+                        ", senha= " + "'" + this.senha + "'" +
                         '}';
         }
 }
